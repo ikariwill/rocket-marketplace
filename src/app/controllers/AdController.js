@@ -31,7 +31,7 @@ class AdController {
   }
 
   async show (req, res) {
-    const ad = await Ad.findById(req.params.id)
+    const ad = await Ad.findById(req.params.id).populate('author')
 
     return res.json(ad)
   }
